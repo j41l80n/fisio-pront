@@ -1,0 +1,63 @@
+#tutorial
+  http://portalpadrao.plone.org.br/
+  https://tutorial.djangogirls.org/pt/
+
+sudo apt-get update
+sudo apt-get upgrade
+
+#Atom
+  #instalacao
+    sudo add-apt-repository ppa:webupd8team/atom -y && sudo apt-get update && sudo apt-get install atom -y
+      #desinstalando
+        sudo apt remove --purge atom
+
+#Sublime
+  #instalacao
+    sudo add-apt-repository ppa:webupd8team/sublime-text-3
+    sudo apt-get update
+    sudo apt-get install sublime-text-installer
+
+#instalacao do git
+  sudo apt-get update
+  sudo apt-get install git
+  #verifica versao atual do git
+    git --version
+    #configuracao basica do git
+      git config --global user.email "email@exemplo.com"
+      git config --global user.name "nome"
+
+#ssh key
+  ssh-keygen -t rsa -C "exemplo@exemplo.com" -b 4096
+  cat ~/.ssh/id_rsa.pub
+  cadastrar no gitlab
+  clonar diretorio > git@gitlab.com:cygnus.mobi/sematica.git
+
+#python
+  #verifica versao python
+    python3 -V
+
+#instalacao pip3
+  sudo apt-get install -y python3-pip
+  #atualizando pip
+    pip3 install --upgrade pip
+
+#instalacao Virtual Environment
+  sudo apt-get install -y python3-venv
+  python3 -m venv venvsematica
+  #ativando Virtual Environment venvsematica
+    source venvsematica/bin/activavte
+    #desativando Virtual Environment venvsematica
+      deactivate
+
+#instalacao Django
+  pip3 install Django==1.11.1
+  #verificando versao Django
+    python3 -m django --version
+    #iniciando projeto
+      django-admin startproject sematica .
+        #migrando banco de dados
+          python3 manage.py migrate
+            #rodando servidor
+              python3 manage.py runserver ou python manage.py runserver 0.0.0.0:8000 ou python
+python3 manage.py createsuperuser
+python3 manage.py startapp prontuarios
