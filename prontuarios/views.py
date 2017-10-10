@@ -14,7 +14,14 @@ from django.contrib.auth import logout #custom
 from django.conf import settings
 from django.core.urlresolvers import reverse #custom
 import datetime
-
+# from .forms import * #custom
+from .models import * #custom
 
 def home(request):
-	return render(request, 'prontuarios/index.html')
+	pacientes = Paciente.objects.all()
+	return render(request, 'prontuarios/index.html', {'pacientes': pacientes})
+
+def detalhes(request, id):
+	consultas = Consulta.objects.filter(pk=id)
+	# consnultas = Consnultas.objects.all()
+	return render(request, 'prontuarios/detalhes.html', {'consultas': consultas})

@@ -12,9 +12,22 @@
 
 <body>
 
-  <h1>FISIOPRONT</h1>
+  <h1><i>FISIO</i>PRONT</h1>
+  {% if pacientes.count > 0%}
+    <h2>lista de pacientes</h2>
+    {% for paciente in pacientes %}
+      <h4>
+        <a href="{% url 'detalhes' paciente.id %}">
+          {{ paciente.username|upper }}
+        </a>
+      </h4>
+    {% endfor %}
+  {% else %}
+    nenhuma usuario cadastrado
+  {% endif %}
 
-  {% block content %} {% endblock content %}
+  {% block content %}
+  {% endblock content %}
 
 </body>
 

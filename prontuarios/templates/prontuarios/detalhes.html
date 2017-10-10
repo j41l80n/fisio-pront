@@ -1,0 +1,12 @@
+{% extends "prontuarios/base.html" %}
+
+{% block titulo %}{{nome|upper}}{% endblock %}
+{% block content %}
+  {% for consulta in consultas %}
+    <h4>
+      <a href="{{consulta.cpf}}">
+        {{consulta.cpf}}
+      </a>
+    </h4>
+  {% endfor %}
+{% endblock %}
